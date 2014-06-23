@@ -1,0 +1,39 @@
+.container {
+  max-width: 700px;
+}
+
+.input-form {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+
+.form-control {
+  display:inline-block;
+  width:85%;
+  margin-left: 20px;
+}
+
+.btn {
+  margin: 0;
+}
+
+.text-holder {
+  display:inline-block;
+}
+
+.text-holder h3{
+  margin-top: 5px;
+  padding: 0;
+}
+
+li{
+  overflow:hidden;
+}
+
+.list-group {
+  margin-right: 25px;
+}
+
+.modal-footer {
+  margin-top: 0;
+}

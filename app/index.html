@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>TODO app</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/app.css"/>
+  <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body ng-controller="myAppCtrl">
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div class="container" >
+    <div class="row page-header">
+      <h1>TODO</h1>
+    </div><!-- END page-header -->
+
+    <div ng-submit="addTodo()" id="todo-form" class="row">
+      <form validate action="" role="form" class="input-form">
+        <input type="text" class="form-control" placeholder="Type your task here..." ng-model="text" required >
+        <input class="btn btn-primary" type="submit" value="Add">
+      </form>
+    </div><!-- END todo form -->
+    <div id="show-todo" class="row">
+      <div class="checkbox">
+					<ul class="list-group">
+					  <li class="list-group-item list_of_items" ng-repeat="task in tasks">
+              <div class="text-holder">
+                <h3>{{task.title}}</h3>
+              </div>
+              <div class="btn-group pull-right">
+                <button class="delete btn btn-warning" ng-click="removeTodo(task)">Delete</button>
+                <button class="edit btn btn-success" data-toggle="modal" data-target="#editModal" ng-click="editTodo(task)">Edit</button>
+              </div>
+            </li>
+					</ul>
+				</div><!-- END checkbox -->
+    </div><!-- END show-todo -->
+  </div><!-- END container -->
+
+  <!--<div ng-view></div>-->
+
+  <!-- EDIT MODAL -->
+  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Edit todo</h4>
+        </div>
+        <div class="modal-body">
+
+          <div id="todo-form" class="row">
+            <form role="form">
+              <input type="text" class="form-control" placeholder="{{oldText.title}}" ng-model="newText">
+            </form>
+          </div><!-- END todo form -->
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="saveTodo()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END EDIT MODAL -->
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+</body>
+</html>
