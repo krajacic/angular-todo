@@ -1,5 +1,7 @@
 TODO
- ====
+====
+
+#bootstrap+angularjs+angular-seed
 
 Simple bootstraped TODO app created using AngularJS built on top of angular-seed.
 
