@@ -1,9 +1,7 @@
-TODO
+[TODO](http://wedranb.github.io/angular-todo/)
 ====
-
-#bootstrap+angularjs+angular-seed
 
 Simple bootstraped TODO app created using AngularJS built on top of angular-seed.
 
 
-You can clone it and run npm start to try it out.
+You can try it out [here](http://wedranb.github.io/angular-todo/).
